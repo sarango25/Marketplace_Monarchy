@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Cormorant+Infant:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+html, body {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #CC904E;
+    
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.login__box{
+    width: 50%;
+    margin-top: 250px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.login__title { 
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3em;
+}
+
+.login__txt {
+    font: 1em;
+    margin-top: 0px;
+   
+}
+
+.email__txt {
+    margin-top: 20px;
+}
+
+.login__email {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.password__txt {
+    font: 1em;
+    margin-top: 20px;
+}
+
+.login__password {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.signin__form {
+    margin-top: 20px;
+    width: 100%;
+    padding: 2.5px;
+}
+
+.signup__link {
+    font: 1em;
+    margin-top: 20px;
+    color: #C0C0C0;
+    
+}
+
+.signin__btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 3.78px;
+    color:white;
+    background-color: #CC904E;
+}
+
+.banner__txt {
+   font-family: 'Barlow Condensed', sans-serif;
+   font-size: 5em;
+   color: white;
+   position: absolute;
+   margin-left: 100px;
+   margin-top: 250px;
+}
+
+.banner__img{
+    width: 100%;
+    
+} 
+
+.signup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup__box {
+    width: 50%;
+    margin-top: 200px;
+    margin-left: 150px;
+    margin-right: 250px;
+}
+
+.signup__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3em;
+}
+
+.name__txt {
+    margin-top: 20px;
+}
+
+.signup__name {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.signup__email {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.signup__password {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.signup__btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 3.78px;
+    color:white;
+    background-color: #CC904E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
