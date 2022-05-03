@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth} from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -8,6 +8,9 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+import { signIn, createUser} from "./src/scripts/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyB-xOwIS7wFd3w8yx8H5UNtBp_50hs_Wa0",
   authDomain: "taller-2-web-35197.firebaseapp.com",
@@ -35,7 +38,13 @@ signup.addEventListener("submit", e => {
     const email = signup.email.value;
     const password = signup.password.value;
 
-    createUser(name,email,password);
+    const newUser ={
+        name,
+        email,
+        password
+    }
+
+    createUser(auth,newUser);
 
     window.location.href="index.html"
 
@@ -50,35 +59,14 @@ login.addEventListener("submit", e => {
     const email = login.email.value;
     const password = login.password.value;
 
-    signIn(email,password);
+    signIn(auth,email,password);
 
 
 })
 }
 
-async function createUser (name,email,password){
-    try{
-        const newUser = await createUserWithEmailAndPassword(auth, email, password);
-        alert('Bienvendio, usuario ${uid}');
-    }catch(e){
-        if (e.code === "auth/weak-password"){
-            alert("At least 6 characters");
-        }
-        if (e.code ==="auth/email-already-in-use"){
-            alert("Try an other email");
-        }
-    }
-    
-}
 
-async function signIn (email,password){
-    try{
-        const { user } = await signInWithEmailAndPassword(auth, email, password);
-        alert('Bienvendio, usuario ${user,email}');
-    }catch (e) {
-            alert("Email or password incorrect");
-        
-    }
-}
+
+
 
 
