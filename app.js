@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -9,7 +10,7 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-import { signIn, createUser} from "./src/scripts/auth";
+import { signIn, createUser, addUserToDataBase} from "./src/scripts/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB-xOwIS7wFd3w8yx8H5UNtBp_50hs_Wa0",
@@ -25,13 +26,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 console.log(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
 const signup = document.getElementById("signup__form");
 const login = document.getElementById("login__form");
 
 if(signup != null){
-signup.addEventListener("submit", e => {
+signup.addEventListener("submit",async (e) => {
     e.preventDefault();
 
     const name = signup.name.value;
@@ -41,13 +43,15 @@ signup.addEventListener("submit", e => {
     const newUser ={
         name,
         email,
-        password
+        password,
+        isAdmin:false
     }
 
-    createUser(auth,newUser);
+    const userCreated = await createUser(auth,newUser);
+    await addUserToDataBase(db,userCreated.user.uid,newUser);
+    console.log(userCreated);
 
-    window.location.href="index.html"
-
+    /*window.location.href="index.html"*/
 
 })
 } 
@@ -60,6 +64,12 @@ login.addEventListener("submit", e => {
     const password = login.password.value;
 
     signIn(auth,email,password);
+    if (user.isAdmin){
+        location.href ="#";
+        
+    }else{
+        location.href ="#";
+    }
 
 
 })

@@ -1,9 +1,10 @@
+import { doc, setDoc } from "firebase/firestore";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 async function createUser (auth,{email,password}){
     try{
         const newUser = await createUserWithEmailAndPassword(auth, email, password);
-        alert('Bienvendio, usuario ${uid}');
+        return newUser;
     }catch(e){
         if (e.code === "auth/weak-password"){
             alert("At least 6 characters");
@@ -25,8 +26,19 @@ async function signIn (auth,email,password){
     }
 }
 
+async function addUserToDataBase(db,userId,userInfo){
+    try{
+        await setDoc(doc(db, "users", userId), userInfo);
+        } catch (e){
+            console.log(e);
+        }
+
+    }
+
+
 export {
     createUser,
-    signIn
+    signIn,
+    addUserToDataBase
 }
 
