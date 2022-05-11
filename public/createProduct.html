@@ -5,23 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a new product</title>
+
+
+    <link rel="stylesheet" href="../src/styles/styles.css">
 </head>
 <body>
-    <form id="createProductForm">
-        <input type="text" name="name" placeholder="Product name">
-        <textarea name="description" ></textarea>
-        <input type="number" name="price">
-        <select name="category" id="">
-            <option value="whisky"></option>
-            <option value="tequila"></option>
-            <option value="gin"></option>
-            <option value="jagermaister"></option>
-            <option value="vodka"></option>
-            <option value="whine"></option>
-        </select>
-        <input type="file" name="img" multiple accept = ".png, .jpg, .jpeg">
-        <input type="submit" value="Add product">
-    </form>
+    
+        <h2 class="addProduct__title">ADD A PRODUCT</h2>
+        <p class="addProduct__txt">Enter every detail of the new product</p>
+
+        <section class="addProduct">
+            <div class="addProduct__form1">
+                <form id="createProductForm">
+                    <p class="addProduct__nameTxt">Product name</p>
+                    <input type="text" class="addProduct__name" name="name" >
+                    <p class="addProduct__descriptionTxt">Description</p>
+                    <textarea class="addProduct__description" name="description" ></textarea>
+                    <p class="addProduct__priceTxt">Price</p>
+                    <input type="number" class="addProduct__price" name="price">
+                    <p class="addProduct__categoryTxt">Category</p>
+                    <select name="category" id="">
+                        <option value="whisky">Whisky</option>
+                        <option value="tequila">Tequila</option>
+                        <option value="gin">Gin</option>
+                        <option value="jagermaister">Jagermaister</option>
+                        <option value="vodka">Vokda</option>
+                        <option value="whine">Whine</option>
+                    </select>
+            </div>
+            <div>
+                <p class="addProduct__imageTxt">Add product image (.png / .jpg / .jpeg)</p>
+                <input class="addProduct__image" type="file" name="img" multiple accept = ".png, .jpg, .jpeg">
+                <input class="addProduct__btn" type="submit" value="Add product">
+            </form>
+            </div>
+        </section>
+   
 
     <script src="../src/scripts/createProduct.js" type="module"></script>
     

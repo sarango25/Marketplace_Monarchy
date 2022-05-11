@@ -150,6 +150,94 @@ a {
     background-color: #CC904E;
 }
 
+.addProduct {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;
+}
+
+.addProduct__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.addProduct__txt {
+    font: 1em;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.addProduct__nameTxt {
+    font: 1em;
+    margin-top: 20px;
+}
+
+.addProduct__name {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.addProduct__descriptionTxt {
+    font: 1em;
+    margin-top: 20px;
+}
+
+.addProduct__description {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.addProduct__categoryTxt {
+    font-family: 'Open Sans', sans-serif;
+    font: 1em;
+    margin-top: 20px;
+}
+
+.addProduct__category {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.addProduct__imageTxt {
+    font-family: 'Open Sans', sans-serif;
+    font: 1em;
+    margin-top: 20px;
+}
+
+.addProduct__image {
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+.addProduct__btn{
+    width: 100%;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 3.78px;
+    color:white;
+    background-color: #CC904E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

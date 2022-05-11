@@ -1,10 +1,9 @@
-import {app, auth, db} from "./properties"
-import { addProduct } from "./addProduct";
-
+import {app, auth, db, storage} from "./properties"
+import { addProduct, uploadImages } from "./addProduct";
 
 const createProductForm = document.getElementById("createProductForm");
 
-createProductForm.addEventListener ("submit", e => {
+createProductForm.addEventListener ("submit",async (e) => {
 e.preventDefault();
 console.log("Add a new product");
 
@@ -16,15 +15,23 @@ const price = createProductForm.price.value;
 const category = createProductForm.category.value;
 const img = createProductForm.img.files;
 
+let gallery = [];
+
+if (img.lenght) {
+    const uploadImages = await uploadImages(storage, [...img]);
+    
+    gallery = await Promise.all(uploadImages)
+}
+
 const newProduct = {
     name,
     description,
     price,
     category,
-   // img
+    img: gallery,
 };
 
-addProduct(db,newProduct);
+await addProduct(db,newProduct);
 
 
 });
