@@ -15,8 +15,9 @@
         <p class="addProduct__txt">Enter every detail of the new product</p>
 
         <section class="addProduct">
+            <form id="createProductForm">
             <div class="addProduct__form1">
-                <form id="createProductForm">
+                
                     <p class="addProduct__nameTxt">Product name</p>
                     <input type="text" class="addProduct__name" name="name" >
                     <p class="addProduct__descriptionTxt">Description</p>
@@ -37,12 +38,13 @@
                 <p class="addProduct__imageTxt">Add product image (.png / .jpg / .jpeg)</p>
                 <input class="addProduct__image" type="file" name="img" multiple accept = ".png, .jpg, .jpeg">
                 <input class="addProduct__btn" type="submit" value="Add product">
-            </form>
             </div>
+            </form>
+            
         </section>
    
 
-    <script src="../src/scripts/createProduct.js" type="module"></script>
+    <script src="../src/scripts/functions/createProduct.js" type="module"></script>
     
 </body>
 </html>

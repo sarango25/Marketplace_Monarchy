@@ -31,7 +31,7 @@ const analytics = getAnalytics(app);
 const storage = getStorage(app);
 
 export {
-    app, auth, db
+    app, auth, db,storage
 }
 
 

@@ -17,10 +17,10 @@ async function imageUploadReference(storage,image){
 
 async function uploadImages(storage,images = []){
 
-    const uploadImages = img.map (async (image) => {
+    const uploadImages = images.map (async (image) => {
         const imageReference = await imageUploadReference(storage,image);
 
-        return getDownloadURL(ref(storage,imag.ref.fullPath));
+        return getDownloadURL(ref(storage,imageReference.ref.fullPath));
     });
 
     return uploadImages;
