@@ -1,4 +1,25 @@
-function getProducts() {
-    const collectionRef = collection(db, "NOMBRE_DE_LA_COLECCION");
-    const { docs } = await getDocs(collectionRef);
+import {app, auth, db, storage} from "./properties"
+import {collection,getDocs} from "firebase/firestore";
+
+async function getProducts(db) {
+    const collectionRef = collection(db, "products");
+        try {
+
+            const { docs } = await getDocs(collectionRef);
+            const firebaseProducts = docs.map((doc) =>{
+                console.log(doc);
+                return{
+                    ...doc.data(),
+                    id: doc.id,
+                };
+            });
+        
+            return firebaseProducts;
+        } catch(e){
+            console.log(e);
+        }
+}
+
+export{
+    getProducts,
 }
