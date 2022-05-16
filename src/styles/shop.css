@@ -1,7 +1,8 @@
-.products {
+#products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 .product {
@@ -9,6 +10,7 @@
     display: block;
     background-color:rgb(211, 211, 211);
     border-radius: 0 0 10px 10px;
+    margin-bottom: 15px;
 }
 
 .product__image{
@@ -23,6 +25,10 @@
 
 .product__name{
     margin: 5px;
+    font-size: 1em;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #CC904E;
+    margin-top: 20px;
 }
 
 .loader {
