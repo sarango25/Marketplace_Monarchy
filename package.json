@@ -1,9 +1,8 @@
 {
   "name": "taller-2",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "dev": "parcel ./public/shop.html",
+    "dev": "parcel ./public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sebastian",
