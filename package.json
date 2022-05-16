@@ -1,9 +1,11 @@
 {
   "name": "taller-2",
   "version": "1.0.0",
+
   "scripts": {
     "dev": "parcel ./public/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build --public-url ./ ./public/*.html "
   },
   "author": "sebastian",
   "license": "ISC",
