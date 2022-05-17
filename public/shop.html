@@ -10,7 +10,59 @@
 
 </head>
 <body>
-    <label for="category">Filtery by category</label>
+    <header>
+        <nav class="nav flex">
+         <a href="#" class="logo" >
+           <img src="../img/logo_black.png" alt="monarchy_logo" height="45"> 
+           </a> 
+           <ul class="menu flex align-items-center">
+              <li class="menu__item"> 
+                 <a class="current" href="./landing.html">HOME</a>  
+              </li>
+              <li class="menu__item">
+                 <button>SHOP</button> 
+                 <ul class="menu__expanded">
+                    <li>
+                       <a href="#">WHISKEY</a>
+                    </li>
+                    <li>
+                       <a href="#">TEQUILA</a>
+                    </li>
+                    <li>
+                       <a href="#">VODKA</a>
+                    </li>
+                    <li>
+                       <a href="#">WHINE</a>
+                    </li>
+                    <li>
+                       <a href="#">BEER</a>
+                    </li>
+                 </ul>
+              </li>
+              <li class="menu__item"> 
+                 <a href="#">ABOUT US</a>  
+              </li>
+              <li class="menu__item"> 
+                 <a href="#">CONTACT</a>  
+              </li>
+              <li>
+                 <a href="#" class="menu__item">
+                 <img src="../img/cart_logoBlack.png" alt="icon1" height="20">
+                 </a>
+              </li>
+              <li>
+                 <a href="#" class="menu__item">
+                 <img src="../img/user_logoBlack.png" alt="icon2" height="20">
+                 </a>
+              </li>
+           </ul>
+           <button class="menu__mobile"> <img src="../img/imgLanding/icon_menu.png" alt="icon6" height="20"></button>  
+        </nav>
+     </header>
+
+     <p class="shop__title">ALL PRODUCTS</p>
+
+    <label for="category" class="category__label">Filtery by category</label>
     <select name="categoria" id="category">
         <option value="">Todas</option>
         <option value="whisky">Whisky</option>
@@ -33,6 +85,35 @@
         <div class="loader"></div>
 
     </section>
+    <footer class="footer">
+        <div class="footer__items">
+           <a href="#" class="logo" >
+           <img src="../img/imgLanding/monarchy_logo.png" alt="monarchy_logofooter" height="45"> 
+           </a> 
+           <div>
+              <ul class="contact">
+                 <p>CONTACT</p>
+                 <li class="contact__item">
+                    <a href="#">shop@monarchy.com</a>
+                 </li>
+                 <li class="contact__item">
+                    <a href="#" >(310) 389 56 09</a>
+                 </li>
+              </ul>
+           </div>
+           <div>
+              <ul class="social">
+                 <p>FOLLOW US</p>
+                 <li class="social__item">
+                    <a href="#" >Facebook</a>
+                 </li>
+                 <li class="contact__item">
+                    <a href="#" >Instagram</a>
+                 </li>
+              </ul>
+           </div>
+        </div>
+     </footer>
     <script src="../src/scripts/functions/shop.js" type="module"></script>
     
 </body>

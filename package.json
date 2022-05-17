@@ -3,7 +3,7 @@
   "version": "1.0.0",
 
   "scripts": {
-    "dev": "parcel ./public/index.html",
+    "dev": "parcel ./public/*.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build --public-url ./ ./public/*.html "
   },

@@ -547,7 +547,6 @@ function renderProducts(item) {
     product.innerHTML = ` <a class="product" href="#">
     <img src="${coverImage}" alt="" class="product__image">
     <div class="product__info">
-        <p class="product__category">${item.category}</p>
         <h2 class="product__name">${item.name}</h2>
         <h3 class="product__price">${item.price}</h3>
         <button class="product__btn">Añadir al carrito</button>

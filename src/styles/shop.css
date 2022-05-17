@@ -1,16 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Cormorant+Infant:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+
+html, body {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+/*Ocultar bullet points de la lista*/
+ul {
+    list-style: none;
+}
+
+/*Ocultar diseño de link*/
+a {
+    text-decoration: none;
+}
+
+/*Clases utilitarias*/
+.flex {
+    display: flex;
+
+}
+
+/*Clases utilitarias*/
+.align-items-center {
+    align-items: center;
+    margin-right: 69px;
+}
+
+.nav {
+    justify-content: space-between;
+    margin-top: 29px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    
+}
+
+/*Diagramación del logo*/
+.logo {
+    margin-left: 69px;
+} 
+
+/*Ocultar items de los botones*/
+.menu__expanded {
+    display: none;
+    z-index: 1;
+}
+
+/*Espacio entre items del menu*/
+.menu__item {
+    margin: 0 15px;
+    position: relative;
+}
+
+/*Editar color de los items del menu*/
+.menu__item a {
+    color:#121413;
+}
+
+/*Interacción de menu item*/
+.menu__item:hover {
+    padding-bottom: 5px;
+    box-shadow: 0 3px 0 #CC904E;
+    
+}
+
+/*Ocultar fondo del boton*/
+.menu__item button {
+    color: #121413;
+    background-color: transparent;
+    border: none;
+}
+
+/*Tamaño de la fuente de los items del menu*/
+.menu__item button, .menu__item a {
+    font-size: 0.9em;
+}
+
+/*Ocultar menu desplegable*/
+.menu__item:hover > .menu__expanded {
+    display: block;
+}
+
+.current{
+    padding-bottom: 5px;
+    box-shadow: 0 3px 0 #CC904E;
+}
+
+/*Diagramación menu desplegable*/
+.menu__expanded {
+    position: absolute;
+    background-color: #CC904E;
+    padding: 10px 25px;
+    left: 0;
+
+}
+
+.menu__mobile {
+    display: none;
+    background-color: transparent;
+    color: #121413;
+    border: none;
+    margin-right: 69px;
+}
+
+.shop__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 69px;
+    font-size: 3em;
+}
+
+
+
+#category{
+    margin-left: 20px;
+    width: 100px;
+    padding: 5px;
+
+}
+
+.category__label{
+    margin-left: 69px;
+    
+}
+
 #products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 50px;
+    margin-left: 69px;
+    margin-right: 69px;
 
 }
 
 .product {
-    width: 200px;
+    width: 300px;
     display: block;
-    background-color:rgb(211, 211, 211);
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .product__image{
@@ -21,15 +154,14 @@
 
 .product__info{
     padding: 10px;
+    margin: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    margin-top: 20px;
+    color: #000;
 }
 
-.product__name{
-    margin: 5px;
-    font-size: 1em;
-    font-family: 'Barlow Condensed', sans-serif;
-    color: #CC904E;
-    margin-top: 20px;
-}
+
 
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
@@ -54,4 +186,36 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .footer{
+    margin-top: 70px;
+    width: 100%;
+    height: 200px;
+    background-color: #121318;
+}
+
+.footer__items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: initial;
+    z-index: 2;
+    padding: 50px 
+   
+    
+}
+
+.footer__items a {
+    color:white;
+}
+.footer__items p {
+    color: white;
+}
+
+.social {
+    margin-right: 69px;
+    
+}
+
+
 
