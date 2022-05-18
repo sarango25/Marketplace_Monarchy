@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"5Ye7j":[function(require,module,exports) {
+})({"ioO4M":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "f6508f9a201b201e";
+module.bundle.HMR_BUNDLE_ID = "67341a79991bf85e";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -525,55 +525,36 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"gV7Te":[function(require,module,exports) {
+},{}],"a8jBb":[function(require,module,exports) {
 var _properties = require("./properties");
-var _products = require("../functions/products");
-const productSection = document.getElementById("products");
-const categoryFilter = document.getElementById("category");
-let products = [];
-async function loadProducts() {
-    const firebaseProducts = await _products.getProducts(_properties.db, _properties.storage);
-    productSection.innerHTML = "";
-    firebaseProducts.forEach((product)=>{
-        renderProducts(product);
-    });
-    products.firebaseProducts;
+var _firestore = require("firebase/firestore");
+const productInfoSection = document.getElementById("productInfo");
+function getParam(param) {
+    const url = window.location.search;
+    const searchParams = new URLSearchParams(url);
+    const productId = searchParams.get(param);
 }
-function renderProducts(item) {
-    const product = document.createElement("a");
-    product.className = "product";
-    product.setAttribute("href", `./product.html?id=abcdef`);
-    const coverImage = item.images ? item.images[0] : "./img/placeholder.jpg";
-    product.innerHTML = ` <a class="product" href="#">
-    <img src="${coverImage}" alt="" class="product__image">
-    <div class="product__info">
-        <h2 class="product__name">${item.name}</h2>
-        <h3 class="product__price">${item.price}</h3>
-        <button class="product__btn">Añadir al carrito</button>
-    </div>
-</a>
-`;
-    productSection.appendChild(product);
+async function getProduct() {
+    const productId = getParam("id");
+    const docRef = _firestore.doc(_properties.db, "product", productId);
+    const docSnap = await _firestore.getDoc(docRef);
+    const data = docSnap.data();
+    const product = {
+        ...data,
+        id: productId
+    };
+    renderProduct(product);
 }
-function filterBy() {
-    const newCategory = categoryFilter.value;
-    let filteredProducts = [];
-    if (newCategory !== "") {
-        filteredProducts = products.filter((product)=>product.category === newCategory
-        );
-        product.category, newCategory();
-        productSection.innerHTML = "";
-        filteredProducts.forEach((product)=>{
-            renderProducts(product);
-        });
-    } else filteredProducts = products;
+function renderProduct(product) {
+    productInfoSection.innerHTML = `
+    <h1 class="product__name">${product.name}</h1>
+    <p class="product__description">${product.description}</p>
+    <h3 class="product__price">${currencyFormat(product.price)}</h3>
+    ${productButtonCart}`;
 }
-categoryFilter.addEventListener("change", (e)=>{
-    filterBy();
-});
-loadProducts();
+getProduct();
 
-},{"./properties":"egt8z","../functions/products":"6M4Yj"}],"egt8z":[function(require,module,exports) {
+},{"./properties":"egt8z","firebase/firestore":"cJafS"}],"egt8z":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "app", ()=>app
@@ -38219,30 +38200,6 @@ function registerStorage() {
 }
 registerStorage();
 
-},{"@firebase/app":"3AcPV","@firebase/util":"ePiK6","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6M4Yj":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getProducts", ()=>getProducts
-);
-var _properties = require("./properties");
-var _firestore = require("firebase/firestore");
-async function getProducts(db) {
-    const collectionRef = _firestore.collection(db, "products");
-    try {
-        const { docs  } = await _firestore.getDocs(collectionRef);
-        const firebaseProducts = docs.map((doc)=>{
-            console.log(doc);
-            return {
-                ...doc.data(),
-                id: doc.id
-            };
-        });
-        return firebaseProducts;
-    } catch (e) {
-        console.log(e);
-    }
-}
+},{"@firebase/app":"3AcPV","@firebase/util":"ePiK6","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["ioO4M","a8jBb"], "a8jBb", "parcelRequire6113")
 
-},{"./properties":"egt8z","firebase/firestore":"cJafS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5Ye7j","gV7Te"], "gV7Te", "parcelRequire6113")
-
-//# sourceMappingURL=shop.201b201e.js.map
+//# sourceMappingURL=product.991bf85e.js.map

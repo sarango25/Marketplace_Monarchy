@@ -7,7 +7,7 @@ const categoryFilter = document.getElementById("category");
 let products = [];
 
 async function loadProducts(){
-    const firebaseProducts = await getProducts(db);
+    const firebaseProducts = await getProducts(db,storage);
     productSection.innerHTML = "";
     firebaseProducts.forEach (product => {
         renderProducts(product);
@@ -40,14 +40,21 @@ productSection.appendChild(product);
 
 function filterBy(){
     const newCategory = categoryFilter.value;
-    const filteredProducts = products.filter((product)=>product.category === newCategory);
+    let filteredProducts = [];
 
-    productSection.innerHTML ="";
-
-    filteredProducts.forEach (product => {
-        renderProducts(product);
-    });
+    if (newCategory !== "") {
+        filteredProducts = products.filter((product)=>product.category === newCategory);
+        product.category === newCategory();
     
+        productSection.innerHTML = "";
+    
+        filteredProducts.forEach (product => {
+            renderProducts(product);
+        });
+    }else{
+        filteredProducts = products;
+    }
+
 }
 
 categoryFilter.addEventListener("change",e => {
